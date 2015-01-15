@@ -1,11 +1,11 @@
-#Very basic metronome prototype
+#Very basic HTML5/JS metronome prototype
 
 - fixed tempo (120)
 - sound only
 - just one sound
 - chrome only
 
-This simple prototype is used to test the regularity of looping sound.
+###This simple prototype is used to test the regularity of looping sound sequence.
 
-It uses P5.js
+###Uses P5.js
 
