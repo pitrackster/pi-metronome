@@ -5,3 +5,7 @@
 - just one sound
 - chrome only
 
+This simple prototype is used to test the regularity of looping sound.
+
+It uses P5.js
+
