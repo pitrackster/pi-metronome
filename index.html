@@ -1,19 +1,39 @@
-<head>
-    <title>Metronome P5.js</title>
-    <script language="javascript" type="text/javascript" src="js/lib/p5.js"></script>
+<html>
+    <head>
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <!-- JS LIBs -->
+        <script language="javascript" type="text/javascript" src="js/lib/jquery-1.11.1.js"></script>
+        <script language="javascript" type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+        <script language="javascript" type="text/javascript" src="js/lib/p5.js"></script>
+        <script language="javascript" type="text/javascript" src="js/lib/p5.dom.js"></script>
+        <script language="javascript" type="text/javascript" src="js/lib/p5.sound.js"></script> 
 
-    <script language="javascript" type="text/javascript" src="js/lib/p5.sound.js"></script>
-    <script language="javascript" type="text/javascript" src="js/main.js"></script>
-    <style>
-        canvas{
-            display: none;
-        }
-    </style>
-</head>
+        <!-- JS MY -->
+        <script language="javascript" type="text/javascript" src="js/main.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="p5-canvas-container" class="my-canvas-container">
+                        
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                
+                <div class="col-md-12">
+                    <button onclick="start()">start</button>
+                    <button onclick="stop()">stop</button>
+                </div>
+            </div>
 
-<body>
-    <h1>(Very) Basic metronome with P5.js library - FIXED 120 BPM - NO LIGHTING - CHROME ONLY</h1>
-    <hr/>
-    <button onclick="playPattern()">Play</button>
-    <button onclick="stopPattern()">Stop</button>    
-</body>
+
+        </div> <!-- /container -->    
+
+    </body>
+</html>
