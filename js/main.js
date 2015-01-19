@@ -55,10 +55,6 @@ function draw() {
     ellipse(width / 2, height / 2, 20, 20);
 }
 
-function updateTempo() {
-
-}
-
 function start() {
     playing = !playing;
     part.loop();
@@ -67,6 +63,14 @@ function start() {
 function stop() {
     playing = !playing;
     part.stop();
+}
+
+function changeTempo(){
+    //stop();
+    tempo = document.getElementById("tempo-input").value;
+    console.log(tempo);
+    part.setBPM(tempo);
+    //start();
 }
 
 
