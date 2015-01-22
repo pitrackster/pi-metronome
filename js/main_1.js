@@ -1,21 +1,19 @@
-var part, env, ticSound;
+var part, noiseEnv;
 var tempo = 120;
+var ticSound;
 var pattern = [1, 0, 0, 0];
 var ac, lastTic = 0;
 var ticked = false;
-
-function preload() {
-    ticSound = loadSound('sounds/seiko-high.wav');
-}
 
 function setup() {
     var p5Canvas = createCanvas(50, 50);
     p5Canvas.parent('p5-canvas-container');
 
-    ticSound.loop(1);
-    ticSound.amp(0);
-    env = new p5.Env(0.01, 1, 0.1, 0);
-    env.setInput(ticSound);
+    // prepare the noise and env used by playTic()
+    ticSound = new p5.Noise();
+    ticSound.start();
+    noiseEnv = new p5.Env(0.01, 1, 0.1, 0);
+    noiseEnv.setInput(ticSound);
 
     // create a part with 8 spaces, where each space represents 1/16th note (default)
     part = new p5.Part(8, 1 / 16);
@@ -27,7 +25,7 @@ function setup() {
 }
 
 function playTic(params, time) {
-    env.play(ticSound, time);
+    noiseEnv.play(ticSound, time);
     var nextTic = ac.currentTime + time;
     console.log(nextTic - lastTic);
     lastTic = nextTic;
@@ -37,7 +35,7 @@ function playTic(params, time) {
     }, 80);
 }
 
-// native p5 function
+// draw a ball (called every 1/60 s due to FPS settings) 
 function draw() {
     background(255);
     strokeWeight(2);
@@ -48,7 +46,6 @@ function draw() {
 }
 
 function start() {
-    console.log('start');
     part.loop();
 }
 
