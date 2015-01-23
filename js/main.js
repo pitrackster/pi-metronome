@@ -49,11 +49,17 @@ function draw() {
 
 function start() {
     console.log('start');
+    //console.log(part);
     part.loop();
+    //playTic(null,0);
+    
 }
 
 function stop() {
+    part.isPlaying = false;
+    part.partStep = 0;
     part.stop();
+    //env.stop();
 }
 
 function changeTempo() {
